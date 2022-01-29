@@ -1,15 +1,28 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
+    const location = useLocation();
     const { SignInUsingGoogle } = useAuth();
+    const history = useHistory();
+    const redirect_url = location.state?.from || '/shop'
+
+    const handleGoogleLogin = () => {
+        SignInUsingGoogle()
+            .then(result => {
+                history.push(redirect_url);
+            })
+    }
+
     return (
         <div className='text-center'>
             <div>
                 <h1>Log in</h1>
-                <form onSubmit="">
+                <form>
                     <input type="email" name="" placeholder='your email' id="" />
                     <br />
                     <input type="password" name="
@@ -21,7 +34,7 @@ const Login = () => {
                 <div>
                     <button
                         className='btn-regular'
-                        onClick={SignInUsingGoogle}
+                        onClick={handleGoogleLogin}
                     >Google Sign In</button>
                 </div>
             </div>
