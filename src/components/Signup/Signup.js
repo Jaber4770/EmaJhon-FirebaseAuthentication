@@ -16,7 +16,7 @@ const Signup = () => {
                     <button className='btn-regular' onClick=''>Google Sign In</button>
                 </div>
                 <div>
-                    <p>Already have an account? <Link to='/login'>Log in</Link></p>
+                    <p>Already have an Ema-John account? <Link to='/login'>Log in</Link></p>
                 </div>
             </div>
         </div>

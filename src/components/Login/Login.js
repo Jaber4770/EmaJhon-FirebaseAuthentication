@@ -29,7 +29,7 @@ const Login = () => {
                 " placeholder='your password' id="" /> <br />
                     <input type="submit" value="submit" />
                 </form> <br />
-                <p>new to ema john? <Link to="/signup">Create Account</Link></p>
+                <p>New to Ema-John? <Link to="/signup">Create Account</Link></p>
                 <br />
                 <div>
                     <button
